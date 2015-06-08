@@ -38,11 +38,10 @@ namespace SimpleTwitchHelper.Windows
         {
             //setup webbrowser
             Helper.SetSilent(TwitchChatBrowser, true);
-            TwitchChatBrowser.Navigated += Navigated;
             TwitchChatBrowser.Visibility = Visibility.Hidden;
+            TwitchChatBrowser.Navigated += Navigated;
             TwitchChatBrowser.Navigate(String.Format(Globals.ChatPopupUrl, Globals.Status.Username));
-
-
+  
             timer = new Timer(1000);
             timer.Elapsed += TimerTick;
 

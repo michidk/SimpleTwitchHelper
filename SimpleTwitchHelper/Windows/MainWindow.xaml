@@ -23,7 +23,7 @@
         <WebBrowser x:Name="TwitchChatBrowser" Source="{x:Null}" ScrollViewer.CanContentScroll="False"
                     ScrollViewer.HorizontalScrollBarVisibility="Hidden"
                     ScrollViewer.VerticalScrollBarVisibility="Hidden" AllowDrop="False" Grid.Column="2"
-                    Margin="0,0,0,10" Grid.RowSpan="3" />
+                    Margin="0,0,0,10" Grid.RowSpan="3" Visibility="Hidden" />
         <Label x:Name="WelcomeLabel" Content="Welcome, {0}!" HorizontalAlignment="Left" Margin="10,10,0,0"
                VerticalAlignment="Top" Height="41" Width="641" FontSize="22" Grid.ColumnSpan="2" />
         <GroupBox x:Name="StatsBox" Header="Stats" HorizontalAlignment="Left" Margin="10,4,0,10" Width="307"
