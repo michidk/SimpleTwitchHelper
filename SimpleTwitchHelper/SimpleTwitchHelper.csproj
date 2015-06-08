@@ -76,10 +76,11 @@
     </Reference>
     <Reference Include="SimpleConfigurationSystem, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\SimpleConfigurationSystem\SimpleConfigurationSystem\obj\Release\SimpleConfigurationSystem.dll</HintPath>
+      <HintPath>..\SimpleConfigurationSystem.dll</HintPath>
     </Reference>
-    <Reference Include="SimpleLoggingSystem">
-      <HintPath>..\..\SimpleLoggingSystem\SimpleLoggingSystem\obj\Release\SimpleLoggingSystem.dll</HintPath>
+    <Reference Include="SimpleLoggingSystem, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SimpleLoggingSystem.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -93,7 +94,7 @@
     </Reference>
     <Reference Include="TwitchCSharp, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TwitchCSharp\TwitchCSharp\bin\Release\TwitchCSharp.dll</HintPath>
+      <HintPath>..\TwitchCSharp.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />

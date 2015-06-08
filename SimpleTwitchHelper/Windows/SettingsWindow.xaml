@@ -128,10 +128,10 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Button Grid.Column="2"  x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Right" Width="75"
+            <Button Grid.Column="0"  x:Name="CancelButton" Content="Cancel" HorizontalAlignment="Left" Width="75"
                         Height="22" VerticalAlignment="Center" Click="CancelButtonClick" TabIndex="1500" HorizontalContentAlignment="Center" />
-            <Button Grid.Column="0" x:Name="SaveButton" Content="Save" Height="22" VerticalAlignment="Center"
-                        HorizontalAlignment="Left" Width="75" Click="SaveButtonClick" TabIndex="1600" />
+            <Button Grid.Column="2" x:Name="SaveButton" Content="Save" Height="22" VerticalAlignment="Center"
+                        HorizontalAlignment="Right" Width="75" Click="SaveButtonClick" TabIndex="1600" />
         </Grid>
     </StackPanel>
 </Window>

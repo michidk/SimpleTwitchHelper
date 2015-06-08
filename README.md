@@ -23,7 +23,8 @@ Feel free to make PR's!
 
 STH uses the following class libarys:
 - https://github.com/michidk/TwitchCSharp
-- http://www.newtonsoft.com/json
-- https://github.com/aaubry/YamlDotNet
 - https://github.com/michidk/SimpleLoggingSystem
 - https://github.com/michidk/SimpleConfigurationSystem
+- http://www.newtonsoft.com/json
+- https://github.com/aaubry/YamlDotNet
+- http://restsharp.org
