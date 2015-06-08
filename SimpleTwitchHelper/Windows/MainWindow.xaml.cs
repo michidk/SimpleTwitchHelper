@@ -38,9 +38,9 @@ namespace SimpleTwitchHelper.Windows
         {
             //setup webbrowser
             Helper.SetSilent(TwitchChatBrowser, true);
-            //TwitchChatBrowser.Navigated += Navigated;
-            //TwitchChatBrowser.Visibility = Visibility.Hidden;
-            //TwitchChatBrowser.Navigate(String.Format(Globals.ChatPopupUrl, Globals.Status.Username));
+            TwitchChatBrowser.Navigated += Navigated;
+            TwitchChatBrowser.Visibility = Visibility.Hidden;
+            TwitchChatBrowser.Navigate(String.Format(Globals.ChatPopupUrl, Globals.Status.Username));
 
 
             timer = new Timer(1000);
@@ -84,7 +84,6 @@ namespace SimpleTwitchHelper.Windows
             else
             {
                 InitCountdown();
-                TwitchChatBrowser.Navigate(String.Format(Globals.ChatPopupUrl, Globals.Status.Username));
             }
         }
 
