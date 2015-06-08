@@ -8,11 +8,11 @@ using System.Windows;
 // associated with an assembly.
 
 [assembly: AssemblyTitle("Simple Twitch Helper")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("a simple but powerfull dashboard for twitch.tv")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("michidk")]
 [assembly: AssemblyProduct("Simple Twitch Helper")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyCopyright("Copyright © 2015 michidk")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
