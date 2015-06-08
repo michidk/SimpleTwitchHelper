@@ -6,6 +6,7 @@ Simple Twitch Helper (STH) is a .wpf application programmed in c#. It's simple a
 ##Features
 - view all important stats
 - set/get stream title & game
+- setup a tweet template, for one-click tweets
 - setup a simple countdown and print the time to a file (with custom string formatting)
 - access the orginal twitch.tv chat
 - view a list of viewers
