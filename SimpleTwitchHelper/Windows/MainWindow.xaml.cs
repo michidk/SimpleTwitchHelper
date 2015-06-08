@@ -4,10 +4,13 @@ using System.IO;
 using System.Text.RegularExpressions;
 using System.Timers;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Navigation;
 using SimpleLoggingSystem;
+using Application = System.Windows.Application;
+using Button = System.Windows.Controls.Button;
+using MessageBox = System.Windows.MessageBox;
+using Timer = System.Timers.Timer;
 
 namespace SimpleTwitchHelper.Windows
 {
@@ -35,9 +38,10 @@ namespace SimpleTwitchHelper.Windows
         {
             //setup webbrowser
             Helper.SetSilent(TwitchChatBrowser, true);
-            TwitchChatBrowser.Navigated += Navigated;
-            TwitchChatBrowser.Visibility = Visibility.Hidden;
-            TwitchChatBrowser.Navigate(String.Format(Globals.ChatPopupUrl, Globals.Status.Username));
+            //TwitchChatBrowser.Navigated += Navigated;
+            //TwitchChatBrowser.Visibility = Visibility.Hidden;
+            //TwitchChatBrowser.Navigate(String.Format(Globals.ChatPopupUrl, Globals.Status.Username));
+
 
             timer = new Timer(1000);
             timer.Elapsed += TimerTick;
@@ -80,6 +84,7 @@ namespace SimpleTwitchHelper.Windows
             else
             {
                 InitCountdown();
+                TwitchChatBrowser.Navigate(String.Format(Globals.ChatPopupUrl, Globals.Status.Username));
             }
         }
 
@@ -355,6 +360,21 @@ namespace SimpleTwitchHelper.Windows
             {
                 Globals.Logger.Log(resp.Message, LogType.Warning);
             }
+        }
+
+        private void TweetButtonClick(object sender, RoutedEventArgs e)
+        {
+            Process.Start(Globals.TweetLink + ReplaceTemplate(Globals.Config.TwitterTemplate));
+        }
+
+        private string ReplaceTemplate(string template)
+        {
+            template = template.Replace("{channel}", Globals.Status.Displayname);
+            template = template.Replace("{title}", Globals.Status.StreamTitle);
+            template = template.Replace("{game}", Globals.Status.Game);
+            template = template.Replace("{viewers}", Globals.Status.Viewers.ToString());
+
+            return template;
         }
     }
 }

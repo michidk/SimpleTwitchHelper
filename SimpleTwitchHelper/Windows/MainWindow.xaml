@@ -83,6 +83,8 @@
                         VerticalAlignment="Top" Width="23" Click="ClearGameButtonClick" Height="23" />
                 <Button x:Name="GetDataButton" Content="Get" HorizontalAlignment="Left" Margin="10,122,0,0"
                         VerticalAlignment="Top" Width="75" Click="GetDataButtonClick" />
+                <Button x:Name="TweetButton" Content="Tweet" Margin="111,122,0,0"
+                	VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" Click="TweetButtonClick" />
             </Grid>
         </GroupBox>
         <TextBox x:Name="LogBox" Margin="10" Grid.Row="2" TextWrapping="Wrap" IsReadOnly="True" Grid.Column="1" />

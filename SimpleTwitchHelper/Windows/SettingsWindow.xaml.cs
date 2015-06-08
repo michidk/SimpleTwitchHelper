@@ -39,6 +39,8 @@ namespace SimpleTwitchHelper.Windows
             RightButtonTextBox.Text = right.Text;
             RightButtonPathBox.Text = right.Executable;
 
+            TwitterTemplateBox.Text = cfg.TwitterTemplate;
+
             UpdateContent();
         }
 
@@ -67,6 +69,8 @@ namespace SimpleTwitchHelper.Windows
             cfg.MiddleHotbarButton.Executable = MiddleButtonPathBox.Text;
             cfg.RightHotbarButton.Text = RightButtonTextBox.Text;
             cfg.RightHotbarButton.Executable = RightButtonPathBox.Text;
+
+            cfg.TwitterTemplate = TwitterTemplateBox.Text;
 
             cfg.Save();
             Globals.Logger.Log("Settings succesfully saved!");

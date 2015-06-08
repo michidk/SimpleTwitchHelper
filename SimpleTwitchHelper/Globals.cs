@@ -9,7 +9,8 @@ namespace SimpleTwitchHelper
     public class Globals
     {
         public const string CreateAuthKeyLink = "http://sth.michidk.cat/request";
-        public const string ChatPopupUrl = "http://www.twitch.tv/{0}/chat?popout=";
+        public const string TweetLink = "https://twitter.com/intent/tweet?text=";
+        public const string ChatPopupUrl = "http://www.twitch.tv/{0}/chat";
         public const string ClientId = "mghb8yk4nts6btvb56d65n3wknryalg";
         public const int PullDataRate = 10;
 

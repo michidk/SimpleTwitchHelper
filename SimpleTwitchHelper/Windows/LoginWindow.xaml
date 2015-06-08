@@ -1,20 +1,33 @@
 ﻿<Window x:Name="LoginWindowWPF" x:Class="SimpleTwitchHelper.Windows.LoginWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="Login" Height="189" Width="361" ShowInTaskbar="False" ResizeMode="NoResize"
+        Title="Login" Height="186" Width="361" ShowInTaskbar="False" ResizeMode="NoResize"
         WindowStartupLocation="CenterOwner" Topmost="True">
-    <Grid>
-        <Button x:Name="LoginButton" Content="Login" Margin="0,0,10,10" Height="23" VerticalAlignment="Bottom"
-                HorizontalAlignment="Right" Width="75" Grid.Column="1" Click="LoginButtonClick" IsDefault="True" />
-        <Button x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left" Margin="10,0,0,10" Width="75" Height="23"
-                VerticalAlignment="Bottom" Click="QuitButtonClick" />
-        <PasswordBox x:Name="AuthKeyBox" Margin="0,64,10,0" VerticalAlignment="Top" HorizontalAlignment="Right"
-                     Width="253" />
-        <Label Content="Twitch Helper Login" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"
-               FontSize="20" Grid.ColumnSpan="2" />
-        <Label Content="Auth Key" Margin="10,60,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" />
-        <Label x:Name="OpenLinkLabel" Content="Don't have an auth key for STH yet? Click here!" HorizontalAlignment="Left"
-               Margin="81,84,0,0" VerticalAlignment="Top" Foreground="#FF0017FF" FontStyle="Italic"
-               MouseLeftButtonUp="OpenLinkLabelClick" />
-    </Grid>
+    <StackPanel Margin="5">
+        <Label Content="Twitch Helper Login" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"
+                   FontSize="20" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.35*"/>
+                <ColumnDefinition Width="20px"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7px"/>
+                <RowDefinition/>
+                <RowDefinition Height="40px"/>
+                <RowDefinition Height="5px"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Label Grid.Column="0" Grid.Row="1" Content="Auth Key:" VerticalAlignment="Top"/>
+            <PasswordBox Grid.Column="2" Grid.Row="1" x:Name="AuthKeyBox" VerticalAlignment="Center"/>
+            <Label Grid.Column="2" Grid.Row="2" x:Name="OpenLinkLabel" Content="Don't have an auth key for STH yet?&#10; Click here!"
+                   VerticalAlignment="Center" Foreground="#FF0017FF" FontStyle="Italic"
+                   MouseLeftButtonUp="OpenLinkLabelClick" />
+            <Button Grid.Column="0" Grid.Row="4" x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom" Click="QuitButtonClick" Width="75" Height="22" />
+            <Button Grid.Column="2" Grid.Row="4" x:Name="LoginButton" Content="Login" VerticalAlignment="Bottom"
+                    HorizontalAlignment="Right" Click="LoginButtonClick" IsDefault="True" Width="75" Height="22" />
+        </Grid>
+    </StackPanel>
 </Window>

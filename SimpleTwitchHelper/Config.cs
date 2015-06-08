@@ -14,6 +14,7 @@ namespace SimpleTwitchHelper
         public HotbarButton LeftHotbarButton { get; set; }
         public HotbarButton MiddleHotbarButton { get; set; }
         public HotbarButton RightHotbarButton { get; set; }
+        public string TwitterTemplate { get; set; }
 
         public Config() : base(Globals.ConfigFile) {}
 
@@ -29,6 +30,7 @@ namespace SimpleTwitchHelper
             LeftHotbarButton = new HotbarButton();
             MiddleHotbarButton = new HotbarButton("Twitch", "http://www.twitch.tv/");
             RightHotbarButton = new HotbarButton();
+            TwitterTemplate = "{game}: {title}";
         }
     }
 }
