@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Threading;
 using System.Windows;
 using System.Windows.Media;
@@ -32,13 +33,20 @@ namespace SimpleTwitchHelper
             Application.Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
             MainDispatcher = Application.Current.Dispatcher;
 
-            Globals.Logger = new Logger(Globals.LogFile);
 
+
+            Globals.Logger = new Logger(Globals.LogFile);
+            CreateFolder();
             LoadedConfigurationResult<Config> result = Configuration<Config>.LoadConfig(Globals.ConfigFile, CustomLog.LogWrapper);
             Globals.Config = result.Configuration;
 
             ProcessLogin();
             Globals.Logger.Log("Simple Twitch Helper Initialized");
+        }
+
+        private void CreateFolder()
+        {
+            DirectoryInfo dir  = Directory.CreateDirectory(Globals.MyFolderPath);
         }
 
         private void ProcessLogin()
