@@ -18,7 +18,7 @@
         <StatusBar BorderBrush="Black" Background="#FFE4E4E4" Grid.ColumnSpan="3" Grid.Row="3"
                    MouseDoubleClick="StatusBarDoubleClick">
             <Label x:Name="StatusLabel" Content="Offline" Width="176" Foreground="Black" FontWeight="Bold" FontSize="13"
-                   Margin="0,-1,0,-0.5" />
+                   Margin="0,-1,0,-0.5" MouseLeftButtonUp="StatusLabelClick" />
         </StatusBar>
         <WebBrowser x:Name="TwitchChatBrowser" Source="{x:Null}" ScrollViewer.CanContentScroll="False"
                     ScrollViewer.HorizontalScrollBarVisibility="Hidden"

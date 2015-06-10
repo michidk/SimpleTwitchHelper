@@ -30,7 +30,7 @@ namespace SimpleTwitchHelper
             LeftHotbarButton = new HotbarButton();
             MiddleHotbarButton = new HotbarButton("Twitch", "http://www.twitch.tv/");
             RightHotbarButton = new HotbarButton();
-            TwitterTemplate = "{game}: {title}";
+            TwitterTemplate = "{title}: {link}";
         }
     }
 }

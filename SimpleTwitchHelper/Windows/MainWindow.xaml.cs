@@ -205,6 +205,8 @@ namespace SimpleTwitchHelper.Windows
 
         private void SetDataButtonClick(object sender, RoutedEventArgs e)
         {
+            Globals.Status.StreamTitle = StreamTitleBox.Text;
+            Globals.Status.Game = GameNameBox.Text;
             Globals.Client.Update(StreamTitleBox.Text, GameNameBox.Text);
             Globals.Logger.Log("Updated title and game.");
         }
@@ -371,8 +373,14 @@ namespace SimpleTwitchHelper.Windows
             template = template.Replace("{title}", Globals.Status.StreamTitle);
             template = template.Replace("{game}", Globals.Status.Game);
             template = template.Replace("{viewers}", Globals.Status.Viewers.ToString());
+            if (Globals.Status != null) template = template.Replace("{link}", Globals.TwitchLink + Globals.Status.Username);
 
             return template;
+        }
+
+        private void StatusLabelClick(object sender, RoutedEventArgs e)
+        {
+            if (Globals.Status != null) Process.Start(Globals.TwitchLink + Globals.Status.Username);
         }
     }
 }
