@@ -24,7 +24,7 @@
                         <RowDefinition />
                         <RowDefinition />
                     </Grid.RowDefinitions>
-                    <GroupBox Header="Stats" Grid.Column="0" Grid.Row="0" x:Name="StatsBox" Margin="5,0,5,5">
+                    <GroupBox Header="Stats" Grid.Column="0" Grid.Row="0" x:Name="StatsBox" Margin="5,0,5,5" Width="288" Height="221">
                         <Grid Margin="5">
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition />
@@ -42,17 +42,17 @@
                             <Label Grid.Column="0" Grid.Row="0" Content="Viewers:" />
                             <Label Grid.Column="1" Grid.Row="0" Content="0" x:Name="ViewersLabel"
                                    HorizontalAlignment="Right" />
-                            <Label Grid.Column="0" Grid.Row="1" Content="Chatters:" />
-                            <Label Grid.Column="1" Grid.Row="1" Content="0" x:Name="ChattersLabel"
+                            <Label Grid.Column="0" Grid.Row="1" Content="Top Viewers:" />
+                            <Label Grid.Column="1" Grid.Row="1" Content="0" x:Name="TopViewsLabel"
                                    HorizontalAlignment="Right" />
-                            <Label Grid.Column="0" Grid.Row="2" Content="FPS:" />
-                            <Label Grid.Column="1" Grid.Row="2" Content="0" x:Name="FPSLabel"
+                            <Label Grid.Column="0" Grid.Row="2" Content="Chatters:" />
+                            <Label Grid.Column="1" Grid.Row="2" Content="0" x:Name="ChattersLabel"
                                    HorizontalAlignment="Right" />
-                            <Label Grid.Column="0" Grid.Row="3" Content="Views:" />
-                            <Label Grid.Column="1" Grid.Row="3" Content="0" x:Name="ViewsLabel"
+                            <Label Grid.Column="0" Grid.Row="3" Content="FPS:" />
+                            <Label Grid.Column="1" Grid.Row="3" Content="0" x:Name="FPSLabel"
                                    HorizontalAlignment="Right" />
-                            <Label Grid.Column="0" Grid.Row="4" Content="Top Views:" />
-                            <Label Grid.Column="1" Grid.Row="4" Content="0" x:Name="TopViewsLabel"
+                            <Label Grid.Column="0" Grid.Row="4" Content="Views:" />
+                            <Label Grid.Column="1" Grid.Row="4" Content="0" x:Name="ViewsLabel"
                                    HorizontalAlignment="Right" />
                             <Label Grid.Column="0" Grid.Row="5" Content="Followers:" />
                             <Label Grid.Column="1" Grid.Row="5" Content="0" x:Name="FollowersLabel"
@@ -63,11 +63,11 @@
                         </Grid>
                     </GroupBox>
                     <StackPanel Grid.Column="1" Grid.Row="0" Margin="5,0,5,5">
-                        <GroupBox Header="Twitch Settings">
+                        <GroupBox Header="Twitch Settings" Width="307" Height="168">
                             <StackPanel>
                                 <Grid Margin="5,2,10,3">
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="10*" />
                                         <ColumnDefinition Width="5px" />
                                         <ColumnDefinition />
                                     </Grid.ColumnDefinitions>
@@ -79,14 +79,14 @@
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
                                     <Label Grid.Row="0" Content="Stream Title:" />
-                                    <TextBox Grid.Row="1" Grid.Column="0" x:Name="StreamTitleBox" Width="250"
+                                    <TextBox Grid.Row="1" Grid.Column="0" x:Name="StreamTitleBox" 
                                              Height="35" TextWrapping="Wrap"
                                              Text="StreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitle"
                                              UndoLimit="0" Margin="5,0,0,0" />
                                     <Button Grid.Row="1" Grid.Column="2" MinWidth="20px" Content="C"
                                             Click="ClearTitleButtonClick" />
                                     <Label Grid.Row="2" Content="Game:" />
-                                    <TextBox Grid.Row="3" Grid.Column="0" x:Name="GameNameBox" Width="250"
+                                    <TextBox Grid.Row="3" Grid.Column="0" x:Name="GameNameBox"
                                              Text="Game Development" UndoLimit="0" Margin="5,0,0,0" />
                                     <Button Grid.Row="3" Grid.Column="2" MinWidth="20px" Content="C"
                                             Click="ClearGameButtonClick" />
@@ -123,7 +123,7 @@
                     <ListBox Grid.Column="0" Grid.Row="1" x:Name="ViewerList" Margin="5,9,5,10" Height="250"
                              Visibility="Hidden" />
                     <GroupBox Header="Ad-Control" Grid.Column="0" Grid.Row="1" x:Name="AdControl"
-                              Margin="5,0,5,10">
+                              Margin="5,0,5,10" Width="288" Height="259">
                         <StackPanel>
                             <Label Content="Trigger Commericals:" FontSize="16" Margin="0,7,0,12" />
                             <Grid Margin="5,10,5,5" Height="150">
@@ -155,7 +155,7 @@
                         </StackPanel>
                     </GroupBox>
                     <TextBox Grid.Column="1" Grid.Row="1" x:Name="LogBox" Margin="5,9,5,10" TextWrapping="Wrap"
-                             IsReadOnly="True" />
+                             IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Auto" Width="307" Height="250"/>
                 </Grid>
             </StackPanel>
             <WebBrowser Width="350" x:Name="TwitchChatBrowser" Source="{x:Null}" ScrollViewer.CanContentScroll="False"
