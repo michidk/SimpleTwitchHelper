@@ -14,12 +14,12 @@
                     <ColumnDefinition Width="50px" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="0" x:Name="LogoutButton" Content="Log Out" Click="LogoutButtonClick"
-                        TabIndex="100" />
-                <Button Grid.Column="2" x:Name="ResetSettingsButton" Content="Reset Settings"
-                        Click="ResetSettingsButtonClick" TabIndex="200" />
-                <Button Grid.Column="4" x:Name="AdControlToggleButton" Content="Show Ad-Buttons"
+                <Button Grid.Column="0" x:Name="AdControlToggleButton" Content="Show Ad-Buttons"
                         Click="AdControlToggleButtonClick" TabIndex="200" />
+                <Button Grid.Column="2" x:Name="LogoutButton" Content="Log Out" Click="LogoutButtonClick"
+                        TabIndex="100" />
+                <Button Grid.Column="4" x:Name="ResetSettingsButton" Content="Reset Settings"
+                        Click="ResetSettingsButtonClick" TabIndex="200" />
             </Grid>
         </GroupBox>
         <GroupBox Header="Countdown Settings">
