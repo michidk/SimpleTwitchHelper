@@ -37,7 +37,7 @@ namespace SimpleTwitchHelper
 
             Globals.Logger = new Logger(Globals.LogFile);
             CreateFolder();
-            LoadedConfigurationResult<Config> result = Configuration<Config>.LoadConfig(Globals.ConfigFile, CustomLog.LogWrapper);
+            LoadedConfigurationResult<Config> result = Configuration<Config>.LoadConfig(CustomLog.LogWrapper);
             Globals.Config = result.Configuration;
 
             ProcessLogin();
