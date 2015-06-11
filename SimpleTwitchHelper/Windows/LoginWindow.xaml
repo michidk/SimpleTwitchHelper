@@ -5,23 +5,24 @@
         WindowStartupLocation="CenterOwner" Topmost="True">
     <StackPanel Margin="5">
         <Label Content="Twitch Helper Login" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top"
-                   FontSize="20" />
+               FontSize="20" />
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.35*"/>
-                <ColumnDefinition Width="20px"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="0.35*" />
+                <ColumnDefinition Width="20px" />
+                <ColumnDefinition />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="7px"/>
-                <RowDefinition/>
-                <RowDefinition Height="40px"/>
-                <RowDefinition Height="5px"/>
-                <RowDefinition/>
+                <RowDefinition Height="7px" />
+                <RowDefinition />
+                <RowDefinition Height="40px" />
+                <RowDefinition Height="5px" />
+                <RowDefinition />
             </Grid.RowDefinitions>
-            <Label Grid.Column="0" Grid.Row="1" Content="Auth Key:" VerticalAlignment="Top"/>
-            <PasswordBox Grid.Column="2" Grid.Row="1" x:Name="AuthKeyBox" VerticalAlignment="Center"/>
-            <Label Grid.Column="2" Grid.Row="2" x:Name="OpenLinkLabel" Content="Don't have an auth key for STH yet?&#10; Click here!"
+            <Label Grid.Column="0" Grid.Row="1" Content="Auth Key:" VerticalAlignment="Top" />
+            <PasswordBox Grid.Column="2" Grid.Row="1" x:Name="AuthKeyBox" VerticalAlignment="Center" />
+            <Label Grid.Column="2" Grid.Row="2" x:Name="OpenLinkLabel"
+                   Content="Don't have an auth key for STH yet?&#10; Click here!"
                    VerticalAlignment="Center" Foreground="#FF0017FF" FontStyle="Italic"
                    MouseLeftButtonUp="OpenLinkLabelClick" />
             <Button Grid.Column="0" Grid.Row="4" x:Name="QuitButton" Content="Quit" HorizontalAlignment="Left"

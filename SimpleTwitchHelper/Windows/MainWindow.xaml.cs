@@ -261,12 +261,12 @@ namespace SimpleTwitchHelper.Windows
             if (hidden)
             {
                 StatsBox.Visibility = Visibility.Hidden;
-                ViewerList.Visibility = Visibility.Hidden;
+                if (!Globals.Config.ShowAdControl) ViewerList.Visibility = Visibility.Hidden;
             }
             else
             {
                 StatsBox.Visibility = Visibility.Visible;
-                ViewerList.Visibility = Visibility.Visible;
+                if (!Globals.Config.ShowAdControl) ViewerList.Visibility = Visibility.Visible;
             }
         }
 
@@ -376,11 +376,6 @@ namespace SimpleTwitchHelper.Windows
             if (Globals.Status != null) template = template.Replace("{link}", Globals.TwitchLink + Globals.Status.Username);
 
             return template;
-        }
-
-        private void StatusLabelClick(object sender, RoutedEventArgs e)
-        {
-            if (Globals.Status != null) Process.Start(Globals.TwitchLink + Globals.Status.Username);
         }
     }
 }

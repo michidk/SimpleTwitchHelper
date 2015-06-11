@@ -2,19 +2,19 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
-        Title="Simple Twitch Helper" Height="600" Width="980" ResizeMode="NoResize" Background="#FFF2F2F2">
+        Title="Simple Twitch Helper" Height="609" Width="980" ResizeMode="NoResize" Background="#FFF2F2F2">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition />
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="30" />
         </Grid.RowDefinitions>
         <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" Margin="5">
             <StackPanel>
                 <Label x:Name="WelcomeLabel" Content="Welcome, {0}!" HorizontalAlignment="Left" Margin="15,3,0,0"
-               VerticalAlignment="Top" Width="600" FontSize="22" />
+                       VerticalAlignment="Top" Width="600" FontSize="22" />
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
@@ -40,19 +40,26 @@
                                 <RowDefinition />
                             </Grid.RowDefinitions>
                             <Label Grid.Column="0" Grid.Row="0" Content="Viewers:" />
-                            <Label Grid.Column="1" Grid.Row="0" Content="0" x:Name="ViewersLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="1" Grid.Row="0" Content="0" x:Name="ViewersLabel"
+                                   HorizontalAlignment="Right" />
                             <Label Grid.Column="0" Grid.Row="1" Content="Chatters:" />
-                            <Label Grid.Column="1" Grid.Row="1" Content="0" x:Name="ChattersLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="1" Grid.Row="1" Content="0" x:Name="ChattersLabel"
+                                   HorizontalAlignment="Right" />
                             <Label Grid.Column="0" Grid.Row="2" Content="FPS:" />
-                            <Label Grid.Column="1" Grid.Row="2" Content="0" x:Name="FPSLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="1" Grid.Row="2" Content="0" x:Name="FPSLabel"
+                                   HorizontalAlignment="Right" />
                             <Label Grid.Column="0" Grid.Row="3" Content="Views:" />
-                            <Label Grid.Column="1" Grid.Row="3" Content="0" x:Name="ViewsLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="1" Grid.Row="3" Content="0" x:Name="ViewsLabel"
+                                   HorizontalAlignment="Right" />
                             <Label Grid.Column="0" Grid.Row="4" Content="Top Views:" />
-                            <Label Grid.Column="1" Grid.Row="4" Content="0" x:Name="TopViewsLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="1" Grid.Row="4" Content="0" x:Name="TopViewsLabel"
+                                   HorizontalAlignment="Right" />
                             <Label Grid.Column="0" Grid.Row="5" Content="Followers:" />
-                            <Label Grid.Column="1" Grid.Row="5" Content="0" x:Name="FollowersLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="1" Grid.Row="5" Content="0" x:Name="FollowersLabel"
+                                   HorizontalAlignment="Right" />
                             <Label Grid.Column="0" Grid.Row="6" Content="New Followers:" />
-                            <Label Grid.Column="1" Grid.Row="6" Content="0" x:Name="NewFollowersLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="1" Grid.Row="6" Content="0" x:Name="NewFollowersLabel"
+                                   HorizontalAlignment="Right" />
                         </Grid>
                     </GroupBox>
                     <StackPanel Grid.Column="1" Grid.Row="0" Margin="5,0,5,5">
@@ -72,11 +79,17 @@
                                         <RowDefinition />
                                     </Grid.RowDefinitions>
                                     <Label Grid.Row="0" Content="Stream Title:" />
-                                    <TextBox Grid.Row="1" Grid.Column="0" x:Name="StreamTitleBox" Width="250" Height="35" TextWrapping="Wrap" Text="StreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitle" UndoLimit="0" Margin="5,0,0,0"/>
-                                    <Button Grid.Row="1" Grid.Column="2" MinWidth="20px" Content="C" Click="ClearTitleButtonClick" />
+                                    <TextBox Grid.Row="1" Grid.Column="0" x:Name="StreamTitleBox" Width="250"
+                                             Height="35" TextWrapping="Wrap"
+                                             Text="StreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitle"
+                                             UndoLimit="0" Margin="5,0,0,0" />
+                                    <Button Grid.Row="1" Grid.Column="2" MinWidth="20px" Content="C"
+                                            Click="ClearTitleButtonClick" />
                                     <Label Grid.Row="2" Content="Game:" />
-                                    <TextBox Grid.Row="3" Grid.Column="0" x:Name="GameNameBox" Width="250" Text="Game Development" UndoLimit="0" Margin="5,0,0,0"/>
-                                    <Button Grid.Row="3" Grid.Column="2" MinWidth="20px" Content="C" Click="ClearGameButtonClick" />
+                                    <TextBox Grid.Row="3" Grid.Column="0" x:Name="GameNameBox" Width="250"
+                                             Text="Game Development" UndoLimit="0" Margin="5,0,0,0" />
+                                    <Button Grid.Row="3" Grid.Column="2" MinWidth="20px" Content="C"
+                                            Click="ClearGameButtonClick" />
                                 </Grid>
                                 <Grid Margin="10,10,10,3">
                                     <Grid.ColumnDefinitions>
@@ -99,15 +112,20 @@
                                     <ColumnDefinition Width="50px" />
                                     <ColumnDefinition />
                                 </Grid.ColumnDefinitions>
-                                <TextBox Grid.Column="0" x:Name="CountdownBox" Text="15:00" UndoLimit="0" PreviewTextInput="CountdownValidation" TextAlignment="Center" Width="70" HorizontalAlignment="Right"/>
-                                <Button Grid.Column="2" x:Name="StartCountdownButton" Content="Start" Click="StartCountdownClick" HorizontalAlignment="Left" Width="50"></Button>
+                                <TextBox Grid.Column="0" x:Name="CountdownBox" Text="15:00" UndoLimit="0"
+                                         PreviewTextInput="CountdownValidation" TextAlignment="Center" Width="70"
+                                         HorizontalAlignment="Right" />
+                                <Button Grid.Column="2" x:Name="StartCountdownButton" Content="Start"
+                                        Click="StartCountdownClick" HorizontalAlignment="Left" Width="50" />
                             </Grid>
                         </GroupBox>
                     </StackPanel>
-                    <ListBox Grid.Column="0" Grid.Row="1" x:Name="ViewerList" Margin="5,0,5,10" Height="250" Visibility="Hidden" />
-                    <GroupBox Header="Ad-Control" Grid.Column="0" Grid.Row="1" Height="250" x:Name="AdControl"  Margin="5,0,5,10">
+                    <ListBox Grid.Column="0" Grid.Row="1" x:Name="ViewerList" Margin="5,10" Height="250"
+                             Visibility="Hidden" />
+                    <GroupBox Header="Ad-Control" Grid.Column="0" Grid.Row="1" x:Name="AdControl"
+                              Margin="5,5,5,10">
                         <StackPanel>
-                            <Label Content="Trigger Commericals:" FontSize="16" Margin="0,7,0,0" />
+                            <Label Content="Trigger Commericals:" FontSize="16" Margin="0,7,0,12" />
                             <Grid Margin="5,10,5,5" Height="150">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition />
@@ -121,27 +139,35 @@
                                     <RowDefinition Height="1*" />
                                     <RowDefinition />
                                 </Grid.RowDefinitions>
-                                <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Content="30 Seconds" Click="TriggerComercial30ButtonClick" />
-                                <Button Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" Content="60 Seconds" Click="TriggerComercial60ButtonClick" />
-                                <Button Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" Content="90 Seconds" Click="TriggerComercial90ButtonClick" />
-                                <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Content="120 Seconds" Click="TriggerComercial120ButtonClick" />
-                                <Button Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" Content="150 Seconds" Click="TriggerComercial150ButtonClick" />
-                                <Button Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" Content="180 Seconds" Click="TriggerComercial180ButtonClick" />
+                                <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Content="30 Seconds"
+                                        Click="TriggerComercial30ButtonClick" />
+                                <Button Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" Content="60 Seconds"
+                                        Click="TriggerComercial60ButtonClick" />
+                                <Button Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" Content="90 Seconds"
+                                        Click="TriggerComercial90ButtonClick" />
+                                <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Content="120 Seconds"
+                                        Click="TriggerComercial120ButtonClick" />
+                                <Button Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" Content="150 Seconds"
+                                        Click="TriggerComercial150ButtonClick" />
+                                <Button Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" Content="180 Seconds"
+                                        Click="TriggerComercial180ButtonClick" />
                             </Grid>
                         </StackPanel>
                     </GroupBox>
-                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="LogBox" Margin="5,0,5,10" TextWrapping="Wrap" IsReadOnly="True" />
+                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="LogBox" Margin="5,14,5,10" TextWrapping="Wrap"
+                             IsReadOnly="True" />
                 </Grid>
             </StackPanel>
-            <WebBrowser Width="350"  x:Name="TwitchChatBrowser" Source="{x:Null}" ScrollViewer.CanContentScroll="False"
-                    ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                    ScrollViewer.VerticalScrollBarVisibility="Hidden" AllowDrop="False"
-                     />
+            <WebBrowser Width="350" x:Name="TwitchChatBrowser" Source="{x:Null}" ScrollViewer.CanContentScroll="False"
+                        ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                        ScrollViewer.VerticalScrollBarVisibility="Hidden" AllowDrop="False" />
         </StackPanel>
         <Grid Grid.Column="0" Grid.Row="1">
-            <StatusBar BorderBrush="Black" Background="#FFE4E4E4" MouseDoubleClick="StatusBarDoubleClick" VerticalAlignment="Bottom">
-                <Label x:Name="StatusLabel" Content="Offline" Width="176" Foreground="Black" FontWeight="Bold" FontSize="13"
-        		Margin="0,-1,0,-0.5" MouseLeftButtonUp="StatusLabelClick" />
+            <StatusBar BorderBrush="Black" Background="#FFE4E4E4" MouseDoubleClick="StatusBarDoubleClick"
+                       VerticalAlignment="Bottom">
+                <Label x:Name="StatusLabel" Content="Offline" Width="176" Foreground="Black" FontWeight="Bold"
+                       FontSize="13"
+                       Margin="0,-1,0,-0.5" />
             </StatusBar>
             <Grid Margin="0,2,0,0">
                 <Grid.ColumnDefinitions>
@@ -151,9 +177,12 @@
                     <ColumnDefinition />
                     <ColumnDefinition Width="1.5*" />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="1" Width="100" Height="20" x:Name="LeftHotbarButton" Content="X" Click="LeftHotbarButtonClick" />
-                <Button Grid.Column="2" Width="100" Height="20" x:Name="MiddleHotbarButton" Content="X" Click="MiddleHotbarButtonClick" />
-                <Button Grid.Column="3" Width="100" Height="20" x:Name="RightHotbarButton" Content="X" Click="RightHotbarButtonClick" />
+                <Button Grid.Column="1" Width="100" Height="20" x:Name="LeftHotbarButton" Content="X"
+                        Click="LeftHotbarButtonClick" />
+                <Button Grid.Column="2" Width="100" Height="20" x:Name="MiddleHotbarButton" Content="X"
+                        Click="MiddleHotbarButtonClick" />
+                <Button Grid.Column="3" Width="100" Height="20" x:Name="RightHotbarButton" Content="X"
+                        Click="RightHotbarButtonClick" />
             </Grid>
             <Grid Margin="0,2,5,0">
                 <Grid.ColumnDefinitions>
@@ -162,8 +191,10 @@
                     <ColumnDefinition Width="10px" />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Grid.Column="1" Width="70" Height="20" Content="Settings" Click="SettingsButtonClick" HorizontalAlignment="Center" />
-                <Button Grid.Column="3" Width="70" Height="20" Content="Logout" Click="LogoutButtonClick" HorizontalAlignment="Center" />
+                <Button Grid.Column="1" Width="70" Height="20" Content="Settings" Click="SettingsButtonClick"
+                        HorizontalAlignment="Center" />
+                <Button Grid.Column="3" Width="70" Height="20" Content="Logout" Click="LogoutButtonClick"
+                        HorizontalAlignment="Center" />
             </Grid>
         </Grid>
     </Grid>
