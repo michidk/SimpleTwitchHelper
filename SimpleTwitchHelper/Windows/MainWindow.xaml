@@ -2,132 +2,169 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:forms="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
-        Title="Simple Twitch Helper" Height="640" Width="980" ResizeMode="NoResize">
-    <Grid Cursor="" Background="#FFF2F2F2">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="52*" />
-            <RowDefinition Height="259*" />
-            <RowDefinition Height="270*" />
-            <RowDefinition Height="30" />
-        </Grid.RowDefinitions>
+        Title="Simple Twitch Helper" Height="600" Width="980" ResizeMode="NoResize" Background="#FFF2F2F2">
+    <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="327*" />
-            <ColumnDefinition Width="327*" />
-            <ColumnDefinition Width="320*" />
+            <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <StatusBar BorderBrush="Black" Background="#FFE4E4E4" Grid.ColumnSpan="3" Grid.Row="3"
-                   MouseDoubleClick="StatusBarDoubleClick">
-            <Label x:Name="StatusLabel" Content="Offline" Width="176" Foreground="Black" FontWeight="Bold" FontSize="13"
-                   Margin="0,-1,0,-0.5" MouseLeftButtonUp="StatusLabelClick" />
-        </StatusBar>
-        <WebBrowser x:Name="TwitchChatBrowser" Source="{x:Null}" ScrollViewer.CanContentScroll="False"
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Column="0" Grid.Row="0" Orientation="Horizontal" Margin="5">
+            <StackPanel>
+                <Label x:Name="WelcomeLabel" Content="Welcome, {0}!" HorizontalAlignment="Left" Margin="15,3,0,0"
+               VerticalAlignment="Top" Width="600" FontSize="22" />
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="Stats" Grid.Column="0" Grid.Row="0" x:Name="StatsBox" Margin="5,0,5,5">
+                        <Grid Margin="5">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition />
+                                <ColumnDefinition />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                                <RowDefinition />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Column="0" Grid.Row="0" Content="Viewers:" />
+                            <Label Grid.Column="1" Grid.Row="0" Content="0" x:Name="ViewersLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="0" Grid.Row="1" Content="Chatters:" />
+                            <Label Grid.Column="1" Grid.Row="1" Content="0" x:Name="ChattersLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="0" Grid.Row="2" Content="FPS:" />
+                            <Label Grid.Column="1" Grid.Row="2" Content="0" x:Name="FPSLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="0" Grid.Row="3" Content="Views:" />
+                            <Label Grid.Column="1" Grid.Row="3" Content="0" x:Name="ViewsLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="0" Grid.Row="4" Content="Top Views:" />
+                            <Label Grid.Column="1" Grid.Row="4" Content="0" x:Name="TopViewsLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="0" Grid.Row="5" Content="Followers:" />
+                            <Label Grid.Column="1" Grid.Row="5" Content="0" x:Name="FollowersLabel" HorizontalAlignment="Right" />
+                            <Label Grid.Column="0" Grid.Row="6" Content="New Followers:" />
+                            <Label Grid.Column="1" Grid.Row="6" Content="0" x:Name="NewFollowersLabel" HorizontalAlignment="Right" />
+                        </Grid>
+                    </GroupBox>
+                    <StackPanel Grid.Column="1" Grid.Row="0" Margin="5,0,5,5">
+                        <GroupBox Header="Twitch Settings">
+                            <StackPanel>
+                                <Grid Margin="5,2,10,3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="5px" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Label Grid.Row="0" Content="Stream Title:" />
+                                    <TextBox Grid.Row="1" Grid.Column="0" x:Name="StreamTitleBox" Width="250" Height="35" TextWrapping="Wrap" Text="StreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitle" UndoLimit="0" Margin="5,0,0,0"/>
+                                    <Button Grid.Row="1" Grid.Column="2" MinWidth="20px" Content="C" Click="ClearTitleButtonClick" />
+                                    <Label Grid.Row="2" Content="Game:" />
+                                    <TextBox Grid.Row="3" Grid.Column="0" x:Name="GameNameBox" Width="250" Text="Game Development" UndoLimit="0" Margin="5,0,0,0"/>
+                                    <Button Grid.Row="3" Grid.Column="2" MinWidth="20px" Content="C" Click="ClearGameButtonClick" />
+                                </Grid>
+                                <Grid Margin="10,10,10,3">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="0.5*" />
+                                        <ColumnDefinition />
+                                        <ColumnDefinition Width="0.5*" />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Content="Get" Click="GetDataButtonClick" />
+                                    <Button Grid.Column="2" Content="Tweet" Click="TweetButtonClick" />
+                                    <Button Grid.Column="4" Content="Set" Click="SetDataButtonClick" />
+                                </Grid>
+                            </StackPanel>
+                        </GroupBox>
+                        <GroupBox Header="Countdown">
+                            <Grid Margin="5,7,5,3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="50px" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <TextBox Grid.Column="0" x:Name="CountdownBox" Text="15:00" UndoLimit="0" PreviewTextInput="CountdownValidation" TextAlignment="Center" Width="70" HorizontalAlignment="Right"/>
+                                <Button Grid.Column="2" x:Name="StartCountdownButton" Content="Start" Click="StartCountdownClick" HorizontalAlignment="Left" Width="50"></Button>
+                            </Grid>
+                        </GroupBox>
+                    </StackPanel>
+                    <ListBox Grid.Column="0" Grid.Row="1" x:Name="ViewerList" Margin="5,0,5,10" Height="250" Visibility="Hidden" />
+                    <GroupBox Header="Ad-Control" Grid.Column="0" Grid.Row="1" Height="250" x:Name="AdControl"  Margin="5,0,5,10">
+                        <StackPanel>
+                            <Label Content="Trigger Commericals:" FontSize="16" Margin="0,7,0,0" />
+                            <Grid Margin="5,10,5,5" Height="150">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition />
+                                    <ColumnDefinition Width="0.5*" />
+                                    <ColumnDefinition />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition />
+                                    <RowDefinition Height="1*" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <Button Grid.Column="0" Grid.Row="0" HorizontalAlignment="Center" Content="30 Seconds" Click="TriggerComercial30ButtonClick" />
+                                <Button Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" Content="60 Seconds" Click="TriggerComercial60ButtonClick" />
+                                <Button Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" Content="90 Seconds" Click="TriggerComercial90ButtonClick" />
+                                <Button Grid.Column="2" Grid.Row="0" HorizontalAlignment="Center" Content="120 Seconds" Click="TriggerComercial120ButtonClick" />
+                                <Button Grid.Column="2" Grid.Row="2" HorizontalAlignment="Center" Content="150 Seconds" Click="TriggerComercial150ButtonClick" />
+                                <Button Grid.Column="2" Grid.Row="4" HorizontalAlignment="Center" Content="180 Seconds" Click="TriggerComercial180ButtonClick" />
+                            </Grid>
+                        </StackPanel>
+                    </GroupBox>
+                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="LogBox" Margin="5,0,5,10" TextWrapping="Wrap" IsReadOnly="True" />
+                </Grid>
+            </StackPanel>
+            <WebBrowser Width="350"  x:Name="TwitchChatBrowser" Source="{x:Null}" ScrollViewer.CanContentScroll="False"
                     ScrollViewer.HorizontalScrollBarVisibility="Hidden"
-                    ScrollViewer.VerticalScrollBarVisibility="Hidden" AllowDrop="False" Grid.Column="2"
-                    Margin="0,0,0,10" Grid.RowSpan="3" Visibility="Hidden" />
-        <Label x:Name="WelcomeLabel" Content="Welcome, {0}!" HorizontalAlignment="Left" Margin="10,10,0,0"
-               VerticalAlignment="Top" Height="41" Width="641" FontSize="22" Grid.ColumnSpan="2" />
-        <GroupBox x:Name="StatsBox" Header="Stats" HorizontalAlignment="Left" Margin="10,4,0,10" Width="307"
-                  Grid.Row="1">
-            <Grid Margin="10,10,10,278">
-                <Label Content="Viewers:" HorizontalAlignment="Left" Margin="0,-12,0,-15" FontSize="13" Height="27"
-                       VerticalAlignment="Top" Width="144" />
-                <Label Content="Followers:" HorizontalAlignment="Left" Margin="0,122,0,-149" VerticalAlignment="Top"
-                       FontSize="13" Height="27" />
-                <Label x:Name="ViewersLabel" Content="0" HorizontalAlignment="Right" Margin="0,-12,10,-15"
-                       VerticalAlignment="Top" FontSize="13" Height="27" />
-                <Label x:Name="FollowersLabel" Content="0" HorizontalAlignment="Right" Margin="0,122,10,-149"
-                       VerticalAlignment="Top" FontSize="13" Height="27" />
-                <Label Content="FPS" HorizontalAlignment="Left" Margin="0,66,0,-93" VerticalAlignment="Top"
-                       FontSize="13" Height="27" />
-                <Label x:Name="FPSLabel" Content="0" HorizontalAlignment="Right" Margin="0,66,10,-93"
-                       VerticalAlignment="Top" FontSize="13" Height="27" />
-                <Label Content="Views:" HorizontalAlignment="Left" Margin="0,93,0,-120" VerticalAlignment="Top"
-                       FontSize="13" Height="27" />
-                <Label Content="New Followers:" HorizontalAlignment="Left" Margin="0,149,0,-176"
-                       VerticalAlignment="Top" FontSize="13" Height="27" />
-                <Label x:Name="NewFollowersLabel" Content="0" HorizontalAlignment="Right" Margin="0,149,10,-176"
-                       VerticalAlignment="Top" FontSize="13" Height="27" />
-                <Label x:Name="ViewsLabel" Content="0" HorizontalAlignment="Right" Margin="0,93,10,-120"
-                       VerticalAlignment="Top" FontSize="13" Height="27" />
-                <Label Content="Chatters:" HorizontalAlignment="Left" Margin="0,41,0,-68" FontSize="13" Width="144"
-                       Height="27" VerticalAlignment="Top" />
-                <Label x:Name="ChattersLabel" Content="0" HorizontalAlignment="Right" Margin="0,41,10,-68"
-                       VerticalAlignment="Top" FontSize="13" Height="27" />
-                <Label Content="Top Viewers:" HorizontalAlignment="Left" Margin="0,14,0,-41" VerticalAlignment="Top"
-                       FontSize="13" Height="27" />
-                <Label x:Name="TopViewsLabel" Content="0" HorizontalAlignment="Right" Margin="0,14,10,-41"
-                       VerticalAlignment="Top" FontSize="13" Height="27" />
-                <Label Content="Subscribers:" HorizontalAlignment="Left" Margin="0,176,0,-203"
-                	VerticalAlignment="Top" FontSize="13" Height="27" />
-                <Label x:Name="SubscribersLabel" Content="0" HorizontalAlignment="Right" Margin="0,176,10,-203"
-                	VerticalAlignment="Top" FontSize="13" Height="27" />
+                    ScrollViewer.VerticalScrollBarVisibility="Hidden" AllowDrop="False"
+                     />
+        </StackPanel>
+        <Grid Grid.Column="0" Grid.Row="1">
+            <StatusBar BorderBrush="Black" Background="#FFE4E4E4" MouseDoubleClick="StatusBarDoubleClick" VerticalAlignment="Bottom">
+                <Label x:Name="StatusLabel" Content="Offline" Width="176" Foreground="Black" FontWeight="Bold" FontSize="13"
+        		Margin="0,-1,0,-0.5" MouseLeftButtonUp="StatusLabelClick" />
+            </StatusBar>
+            <Grid Margin="0,2,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="1.5*" />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Width="100" Height="20" x:Name="LeftHotbarButton" Content="X" Click="LeftHotbarButtonClick" />
+                <Button Grid.Column="2" Width="100" Height="20" x:Name="MiddleHotbarButton" Content="X" Click="MiddleHotbarButtonClick" />
+                <Button Grid.Column="3" Width="100" Height="20" x:Name="RightHotbarButton" Content="X" Click="RightHotbarButtonClick" />
             </Grid>
-        </GroupBox>
-        <GroupBox Grid.Column="1" Header="Stream Settings" HorizontalAlignment="Left" Margin="10,4,0,0" Width="307"
-                  Grid.Row="1" Height="171" VerticalAlignment="Top">
-            <Grid HorizontalAlignment="Left" Height="143" Margin="0,0,-2,-3" VerticalAlignment="Top" Width="297">
-                <Label Content="Stream Title:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="7,-1,0,0"
-                       Grid.ColumnSpan="2" />
-                <TextBox x:Name="StreamTitleBox" HorizontalAlignment="Left" Height="35" Margin="10,25,0,0"
-                         TextWrapping="Wrap" VerticalAlignment="Top" Width="249"
-                         Text="StreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitleStreamTitle"
-                         UndoLimit="0" />
-                <TextBox x:Name="GameNameBox" HorizontalAlignment="Left" Height="23" Margin="10,87,0,0" TextWrapping="Wrap"
-                         VerticalAlignment="Top" Width="249" Text="Game" UndoLimit="0" />
-                <Label Content="Game:" HorizontalAlignment="Left" Margin="7,61,0,0" VerticalAlignment="Top" />
-                <Button x:Name="SetDataButton" Content="Set" HorizontalAlignment="Left" Margin="212,122,0,0"
-                        VerticalAlignment="Top" Width="75" Click="SetDataButtonClick" />
-                <Button x:Name="ClearTitleButton" Content="C" HorizontalAlignment="Left" Margin="264,25,0,0"
-                        VerticalAlignment="Top" Width="23" Click="ClearTitleButtonClick" Height="35" />
-                <Button x:Name="ClearGameButton" Content="C" HorizontalAlignment="Left" Margin="264,87,0,0"
-                        VerticalAlignment="Top" Width="23" Click="ClearGameButtonClick" Height="23" />
-                <Button x:Name="GetDataButton" Content="Get" HorizontalAlignment="Left" Margin="10,122,0,0"
-                        VerticalAlignment="Top" Width="75" Click="GetDataButtonClick" />
-                <Button x:Name="TweetButton" Content="Tweet" Margin="111,122,0,0"
-                	VerticalAlignment="Top" HorizontalAlignment="Left" Width="75" Click="TweetButtonClick" />
+            <Grid Margin="0,2,5,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10*" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="10px" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1" Width="70" Height="20" Content="Settings" Click="SettingsButtonClick" HorizontalAlignment="Center" />
+                <Button Grid.Column="3" Width="70" Height="20" Content="Logout" Click="LogoutButtonClick" HorizontalAlignment="Center" />
             </Grid>
-        </GroupBox>
-        <TextBox x:Name="LogBox" Margin="10" Grid.Row="2" TextWrapping="Wrap" IsReadOnly="True" Grid.Column="1" />
-        <GroupBox Grid.Column="1" Header="Countdown" HorizontalAlignment="Left" Margin="10,180,0,0" Grid.Row="1"
-                  VerticalAlignment="Top" Height="66" Width="307">
-            <Grid HorizontalAlignment="Left" Height="50" Margin="0,0,-2,-12" VerticalAlignment="Top" Width="297">
-                <TextBox x:Name="CountdownBox" HorizontalAlignment="Left" Height="23" Margin="33,12,0,0"
-                         TextWrapping="Wrap" Text="15:00" VerticalAlignment="Top" Width="67" UndoLimit="0"
-                         PreviewTextInput="CountdownValidation" TextAlignment="Center" />
-                <Button x:Name="StartCountdownButton" Content="Start" HorizontalAlignment="Left" Margin="131,12,0,0"
-                        VerticalAlignment="Top" Width="132" Click="StartCountdownClick" />
-            </Grid>
-        </GroupBox>
-        <ListBox x:Name="ViewerList" HorizontalAlignment="Left" Margin="10,10,0,10" Grid.Row="2" Width="307"
-                 Visibility="Hidden" />
-        <Button x:Name="LogoutButton" Content="Log Out" Grid.Column="2" Margin="252,5,5,0" Grid.Row="3"
-                VerticalAlignment="Top" Click="LogoutButtonClick" Height="20" />
-        <Button x:Name="SettingsButton" Content="Settings" Grid.Column="2" Margin="147,5,75,0" Grid.Row="3"
-                VerticalAlignment="Top" Click="SettingsButtonClick" Height="20" />
-        <Button x:Name="MiddleHotbarButton" Content="X" Grid.Column="1" Margin="126,6,126,4" Grid.Row="3"
-                Click="MiddleHotbarButtonClick" />
-        <Button x:Name="RightHotbarButton" Content="X" Grid.Column="1" Margin="206,6,46,4" Grid.Row="3"
-                Click="RightHotbarButtonClick" />
-        <Button x:Name="LeftHotbarButton" Content="X" Grid.Column="1" Margin="46,6,206,4" Grid.Row="3"
-                Click="LeftHotbarButtonClick" />
-        <GroupBox x:Name="AdControl" Header="Ad-Control" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2"
-                  VerticalAlignment="Top" Height="260" Width="307">
-            <Grid HorizontalAlignment="Left" Height="250" VerticalAlignment="Top" Width="297" Margin="0,0,-2,-12">
-                <Button x:Name="TriggerComercial30Button" Content="30 Seconds" HorizontalAlignment="Left" Margin="23,76,0,0"
-                        VerticalAlignment="Top" Width="101" Click="TriggerComercial30ButtonClick" />
-                <Label x:Name="TriggerHeader" Content="Trigger Commerical:" Margin="72,15,72,0" VerticalAlignment="Top"
-                       FontSize="16" />
-                <Button x:Name="TriggerComercial60Button" Content="60 Seconds" HorizontalAlignment="Left" Margin="23,121,0,0"
-                        VerticalAlignment="Top" Width="101" Click="TriggerComercial60ButtonClick" />
-                <Button x:Name="TriggerComercial90Button" Content="90 Seconds" HorizontalAlignment="Left" Margin="23,0,0,62"
-                        VerticalAlignment="Bottom" Width="101" Click="TriggerComercial90ButtonClick" />
-                <Button x:Name="TriggerComercial120Button" Content="120 Seconds" Margin="0,76,23,0" VerticalAlignment="Top"
-                        HorizontalAlignment="Right" Width="101" Click="TriggerComercial120ButtonClick" />
-                <Button x:Name="TriggerComercial150Button" Content="150 Seconds" Margin="0,121,23,0" VerticalAlignment="Top"
-                        HorizontalAlignment="Right" Width="101" Click="TriggerComercial150ButtonClick" />
-                <Button x:Name="TriggerComercial180Button" Content="180 Seconds" HorizontalAlignment="Right" Margin="0,0,23,62"
-                        VerticalAlignment="Bottom" Width="101" Click="TriggerComercial180ButtonClick" />
-            </Grid>
-        </GroupBox>
+        </Grid>
     </Grid>
 </Window>
