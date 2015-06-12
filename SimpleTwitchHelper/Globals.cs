@@ -8,7 +8,7 @@ namespace SimpleTwitchHelper
 {
     public class Globals
     {
-        public const string CreateAuthKeyLink = "http://sth.michidk.cat/request";
+        public const string CreateAuthKeyLink = "http://twitch.michidk.cat/sth";
         public const string TwitchLink = "http://www.twitch.tv/";
         public const string TweetLink = "https://twitter.com/intent/tweet?text=";
         public const string ChatPopupUrl = "http://www.twitch.tv/{0}/chat?popout=";
@@ -23,7 +23,7 @@ namespace SimpleTwitchHelper
 
         public static Logger Logger;
         public static Config Config;
-        public static TwitchNamedClient Client;
+        public static TwitchAuthenticatedClient Client;
 
         public static TMIApi.TMIApi TmiApi = new TMIApi.TMIApi();
         public static TwitchStatus Status = new TwitchStatus();
