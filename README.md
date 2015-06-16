@@ -20,8 +20,20 @@ Download here: https://github.com/michidk/SimpleTwitchHelper/releases
 ![](https://host.michidk.cat/sth_main.png "main window")
 ![](https://host.michidk.cat/sth_settings.png "settings window")
 
+##Installation
+Just go here:
+https://github.com/michidk/SimpleTwitchHelper/releases/latest<br />
+Download and unrar the SimpleTwitchHelper.rar to a folder.<br />
+Then run the setup.exe file.<br />
+
+##Troubleshooting
+If the Twitch-Chat doesn't work, just install Flash in Internet Explorer.<br />
+If you have already flash for Internet Explorer, then try to reset your cache.<br />
+<br />
+If you have other issues with STH then simply open a issue on Github or tweet me (@miichidk).
+
 ##Contribute
-Feel free to make PR's!
+Feel free to fork and make pull requests!
 
 STH uses the following class libarys:
 - https://github.com/michidk/TwitchCSharp
