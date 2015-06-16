@@ -119,10 +119,10 @@ namespace SimpleTwitchHelper
             {
                 return false;
             }
+            Globals.Client = tempClient;
+
             Globals.Status.Username = user.Name;
             Globals.Status.Displayname = user.DisplayName;
-
-            Globals.Client = new TwitchNamedClient(Globals.Status.Username, authkey, Globals.ClientId);
 
             Globals.Config.AuthKey = authkey;
             Globals.Config.Save();

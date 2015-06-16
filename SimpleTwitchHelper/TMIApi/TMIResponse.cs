@@ -3,7 +3,7 @@ using TwitchCSharp.Models;
 
 namespace SimpleTwitchHelper.TMIApi
 {
-    public class TMIResponse : TwitchObject
+    public class TMIResponse : TwitchResponse
     {
         [JsonProperty("chatter_count")]
         public long ChatterCount { get; set; }
