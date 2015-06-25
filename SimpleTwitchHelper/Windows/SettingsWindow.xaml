@@ -47,7 +47,7 @@
                         <Label Grid.Column="0" Grid.Row="0" Content="Counting Message:" HorizontalAlignment="Left"
                                VerticalAlignment="Center" />
                         <TextBox Grid.Column="2" Grid.Row="0" x:Name="CountingMessageBox"
-                                 TextWrapping="Wrap" Text="Starting in {time}!" VerticalAlignment="Center"
+                                 Text="Starting in {time}!" VerticalAlignment="Center"
                                  AcceptsReturn="False" AcceptsTab="False" TabIndex="400" />
                         <Label Grid.Column="2" Grid.Row="1" Content="{}{time} will be replaced by the time"
                                HorizontalAlignment="Left"
@@ -55,14 +55,14 @@
                         <Label Grid.Column="0" Grid.Row="2" Content="Finished:" HorizontalAlignment="Left"
                                VerticalAlignment="Center" />
                         <TextBox Grid.Column="2" Grid.Row="2" x:Name="FinishedMessageBox"
-                                 TextWrapping="Wrap" Text="Finished!"
+                                 Text="Finished!"
                                  AcceptsReturn="False" AcceptsTab="False" TabIndex="500" VerticalAlignment="Center" />
                         <Label Grid.Column="0" Grid.Row="3" Content="Output Path:" HorizontalAlignment="Left"
                                VerticalAlignment="Center" />
                         <TextBox Grid.Column="2" Grid.Row="3" x:Name="CountdownPathBox" Height="34"
-                                 TextWrapping="Wrap" Text="C:\Users\YourName\AppData\Roaming\TwitchHelper"
+                                 Text="C:\Users\YourName\AppData\Roaming\TwitchHelper"
                                  IsReadOnly="True" VerticalAlignment="Center" AcceptsReturn="False"
-                                 AcceptsTab="False" TabIndex="600" Margin="0,0,50,0" />
+                                 AcceptsTab="False" TabIndex="600" Margin="0,0,50,0" TextWrapping="Wrap"/>
                         <Button Grid.Column="2" Grid.Row="3" x:Name="CopyPathButton" Content="Copy"
                                 HorizontalAlignment="Right"
                                 VerticalAlignment="Center" Width="45" Click="CopyPathButtonClick" TabIndex="700"
@@ -73,7 +73,7 @@
         </GroupBox>
         <GroupBox Header="Startup Programs">
             <StackPanel Margin="10,7,10,0">
-                <TextBox x:Name="StartUpExecutablesBox" TextWrapping="Wrap"
+                <TextBox x:Name="StartUpExecutablesBox"
                          TabIndex="800" VerticalAlignment="Center" />
                 <Label x:Name="Label"
                        Content="Enter the full path to a .exe which should be executed when STH&#10;starts up. Enter multiple executables by splitting them with ;&#10;(no empty spaces)"
@@ -103,17 +103,17 @@
                     <Label Grid.Column="0" Grid.Row="2" Content="Right:" HorizontalAlignment="Left"
                            VerticalAlignment="Top" />
                     <TextBox Grid.Column="4" Grid.Row="0" x:Name="LeftButtonPathBox"
-                             TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="1000" />
+                             VerticalAlignment="Center" TabIndex="1000" />
                     <TextBox Grid.Column="4" Grid.Row="1" x:Name="MiddleButtonPathBox"
-                             TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="1200" />
+                             VerticalAlignment="Center" TabIndex="1200" />
                     <TextBox Grid.Column="4" Grid.Row="2" x:Name="RightButtonPathBox"
-                             TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="1400" />
+                             VerticalAlignment="Center" TabIndex="1400" />
                     <TextBox Grid.Column="2" Grid.Row="0" x:Name="LeftButtonTextBox"
-                             TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="900" />
+                             VerticalAlignment="Center" TabIndex="900" />
                     <TextBox Grid.Column="2" Grid.Row="1" x:Name="MiddleButtonTextBox"
-                             TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="1100" />
+                             VerticalAlignment="Center" TabIndex="1100" />
                     <TextBox Grid.Column="2" Grid.Row="2" x:Name="RightButtonTextBox"
-                             TextWrapping="Wrap" VerticalAlignment="Center" TabIndex="1300" />
+                             VerticalAlignment="Center" TabIndex="1300" />
                 </Grid>
                 <Label
                     Content="First field: button text&#xA;Second field: path to .exe or link to a website&#xA;The button will show up over the status bar."
@@ -129,7 +129,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <Label Grid.Column="0" Grid.Row="0" Content="Template:" />
-                    <TextBox Grid.Column="2" Grid.Row="0" x:Name="TwitterTemplateBox" TextWrapping="Wrap"
+                    <TextBox Grid.Column="2" Grid.Row="0" x:Name="TwitterTemplateBox" 
                              VerticalAlignment="Center" />
 
                 </Grid>
