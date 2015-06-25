@@ -356,7 +356,7 @@ namespace SimpleTwitchHelper.Windows
         {
             var resp = Globals.Client.TriggerCommercial(length);
             Globals.Logger.Log("Triggered Commercial! Length: " + length);
-            if (!resp.WasSuccesfull())
+            if (resp.GetState() != TwitchCSharp.Enums.State.success)
             {
                 Globals.Logger.Log(resp.Message, LogType.Warning);
             }
