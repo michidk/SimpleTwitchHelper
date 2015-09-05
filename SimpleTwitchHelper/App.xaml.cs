@@ -199,15 +199,19 @@ namespace SimpleTwitchHelper
                     Globals.Status.Subscribers = subs.Total;
 
                 var response = Globals.TmiApi.GetResponse(Globals.Status.Username);
-                Globals.Status.Chatters = response.ChatterCount;
-                var cht = response.Chatters;
-                var chatterList = new List<string>();
-                chatterList.AddRange(cht.AdminList);
-                chatterList.AddRange(cht.GlobalModList);
-                chatterList.AddRange(cht.ModeratorList);
-                chatterList.AddRange(cht.StaffList);
-                chatterList.AddRange(cht.ViewerList);
-                Globals.Status.ViewersList = chatterList;
+                if (response != null)
+                {
+                    if (response.ChatterCount != null)
+                        Globals.Status.Chatters = response.ChatterCount;
+                    var cht = response.Chatters;
+                    var chatterList = new List<string>();
+                    chatterList.AddRange(cht.AdminList);
+                    chatterList.AddRange(cht.GlobalModList);
+                    chatterList.AddRange(cht.ModeratorList);
+                    chatterList.AddRange(cht.StaffList);
+                    chatterList.AddRange(cht.ViewerList);
+                    Globals.Status.ViewersList = chatterList;
+                }
 
                 Dispatcher.Invoke(DispatcherPriority.Normal, (Action) (UpdateData));
 
