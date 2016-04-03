@@ -8,7 +8,7 @@ namespace SimpleTwitchHelper
 {
     public class Globals
     {
-        public const string CreateAuthKeyLink = "http://twitch.michidk.cat/sth";
+        public const string CreateAuthKeyLink = "https://twitch.michael-lohr.net/sth";
         public const string TwitchLink = "http://www.twitch.tv/";
         public const string TweetLink = "https://twitter.com/intent/tweet?text=";
         public const string ChatPopupUrl = "http://www.twitch.tv/{0}/chat?popout=";

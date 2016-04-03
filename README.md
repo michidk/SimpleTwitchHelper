@@ -15,8 +15,8 @@ Simple Twitch Helper (STH) is a .wpf application programmed in c#. It's simple a
 - something missing? tweet me: @miichidk !
 
 ##Screenshots
-![](https://host.michidk.cat/sth_main.png "main window")
-![](https://host.michidk.cat/sth_settings.png "settings window")
+![](https://host.lohr-it.de/sth_main.png "main window")
+![](https://host.lohr-it.de/sth_settings.png "settings window")
 
 ##Installation
 Just go here:
@@ -28,7 +28,7 @@ Then run the setup.exe file.<br />
 If the Twitch-Chat doesn't work, just install Flash in Internet Explorer.<br />
 If you have already flash for Internet Explorer, then try to reset your cache.<br />
 <br />
-If you have other issues with STH then simply open a issue on Github or tweet me (@miichidk).
+If you have other issues with STH then simply open a issue on GitHub.
 
 ##Contribute
 Feel free to fork and make pull requests!
