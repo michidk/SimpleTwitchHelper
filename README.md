@@ -27,6 +27,7 @@ Then run the setup.exe file.<br />
 ##Troubleshooting
 If the Twitch-Chat doesn't work, just install Flash in Internet Explorer.<br />
 If you have already flash for Internet Explorer, then try to reset your cache.<br />
+If the token generation link is broken, just this one [link](https://twitch.michael-lohr.net/sth).<br />
 <br />
 If you have other issues with STH then simply open a issue on GitHub.
 
