@@ -3,7 +3,7 @@ a simple but powerful dashboard for twitch.tv
 
 Simple Twitch Helper (STH) is a .wpf application programmed in c#. It's simple as possible and you only need one window to controll everything. You can assign hotbar-buttons, startup programms, set your stream title and game & even more!
 
-##Features
+## Features
 - view all important stats
 - set/get stream title & game
 - setup a tweet template, for one-click tweets
@@ -14,24 +14,24 @@ Simple Twitch Helper (STH) is a .wpf application programmed in c#. It's simple a
 - commercial control center (if enabled in settings)
 - something missing? tweet me: @miichidk !
 
-##Screenshots
-![](https://host.lohr-it.de/sth_main.png "main window")
-![](https://host.lohr-it.de/sth_settings.png "settings window")
+## Screenshots
+![](http://i.imgur.com/Pi4cbJa.png "main window")
+![](https://i.imgur.com/tH9Eajv.png "settings window")
 
-##Installation
+## Installation
 Just go here:
 https://github.com/michidk/SimpleTwitchHelper/releases/latest<br />
 Download and unrar the SimpleTwitchHelper.rar to a folder.<br />
 Then run the setup.exe file.<br />
 
-##Troubleshooting
+## Troubleshooting
 If the Twitch-Chat doesn't work, just install Flash in Internet Explorer.<br />
 If you have already flash for Internet Explorer, then try to reset your cache.<br />
 If the token generation link is broken, just use this one [link](https://twitch.michael-lohr.net/sth).<br />
 <br />
 If you have other issues with STH then simply open a issue on GitHub.
 
-##Contribute
+## Contribute
 Feel free to fork and make pull requests!
 
 STH uses the following class libarys:
